@@ -10,6 +10,8 @@ type NotificationItems = {
   basic: Notification;
   image: Notification;
   quickActions: Notification;
+  secondQuickAction: Notification;
+  thirdQuickAction: Notification;
   fullScreen: Notification;
 };
 
@@ -54,6 +56,74 @@ export const notifications: NotificationItems = {
     title: 'Quick Actions',
     body: 'notification',
     id: 'quickAction',
+    android: {
+      channelId: 'default',
+      pressAction: {
+        id: 'default',
+      },
+      actions: [
+        {
+          title: 'Reply, Open & Cancel',
+          pressAction: {
+            id: 'first_action_reply',
+          },
+          // input: {
+          //   choices: ['Yes', 'No', 'Maybe'],
+          //   placeholder: 'Reply to Sarah...',
+          // },
+          input: {},
+        },
+        {
+          title: 'Nothing',
+          pressAction: {
+            id: 'second_action_nothing',
+          },
+        },
+      ],
+    },
+    ios: {
+      sound: 'default',
+      categoryId: 'quickActions',
+    },
+  },
+  secondQuickAction: {
+    title: 'Second Quick Action',
+    body: 'notification',
+    id: 'secondQuickAction',
+    android: {
+      channelId: 'default',
+      pressAction: {
+        id: 'default',
+      },
+      actions: [
+        {
+          title: 'Reply, Open & Cancel',
+          pressAction: {
+            id: 'first_action_reply',
+          },
+          // input: {
+          //   choices: ['Yes', 'No', 'Maybe'],
+          //   placeholder: 'Reply to Sarah...',
+          // },
+          input: {},
+        },
+        {
+          title: 'Nothing',
+          pressAction: {
+            id: 'second_action_nothing',
+          },
+        },
+      ],
+    },
+    ios: {
+      sound: 'default',
+      categoryId: 'quickActions',
+    },
+  },
+  thirdQuickAction: {
+    title: 'Third Quick Action',
+    body: 'notification',
+    id: 'thirdQuickAction',
     android: {
       channelId: 'default',
       pressAction: {

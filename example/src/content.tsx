@@ -12,7 +12,9 @@ type Props = {};
 
 export const Content: React.FC<Props> = () => {
   /* Change the notification payload */
-  const notification = notifications.basic;
+  const notification = notifications.quickActions;
+  const secondNotification = notifications.secondQuickAction;
+  const thirdNotification = notifications.thirdQuickAction;
 
   /* Change the trigger type */
   const triggerType = triggers.timestamp;
@@ -53,8 +55,11 @@ export const Content: React.FC<Props> = () => {
     console.log('notification.channel', channel);
     /* Change the trigger */
     const trigger = triggerType();
+    const trigger2 = triggerType();
 
     await notifee.createTriggerNotification(notification, trigger);
+    await notifee.createTriggerNotification(secondNotification, trigger2);
+    await notifee.createTriggerNotification(thirdNotification, trigger2);
     console.log('Trigger created: ', notification, trigger);
   };
 
